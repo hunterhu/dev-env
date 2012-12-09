@@ -1,0 +1,66 @@
+#
+# .bashrc
+#
+
+#
+# Source global definitions
+#
+if [ -f /etc/bashrc ]; then
+	. /etc/bashrc
+fi
+
+#
+# User specific aliases and functions
+#
+alias rm='rm -i'
+alias cd..='cd ..'
+alias cl='clear'
+alias his='history'
+alias dirs='dirs -v'
+alias psd='pushd'
+alias ppd='popd'
+alias ll='ls -lsht --color'
+alias ls='ls --color'
+alias du='du -sh'
+#alias gitk="gitk --all &"
+alias ack="ack-grep"
+
+#
+# ENV for ack
+#
+export ACK_COLOR_FILENAME="bold red"
+export ACK_COLOR_MATCH="bold blue"
+
+#
+# PATH setup
+#
+PATH=$PATH:$HOME/bin:/sbin
+
+#
+#for cscope
+#
+#export CSCOPE_DB=/home/huhunter/cscope_files/cscope.out
+
+#
+#for realtime command history saving
+#
+shopt -s histappend
+PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
+
+#
+# Disable the CapsLock Key
+#
+if [ "$PS1" ]; then
+    # Disable the CapsLock Key
+    xmodmap -e "remove lock = Caps_Lock"
+fi 
+    # or remove it physically from the board
+
+#
+# Git setup
+#
+declare -x GIT_AUTHOR_NAME="Hunter Hu"
+declare -x GIT_AUTHOR_EMAIL="hunterhu.ca@gmail.com"
+declare -x GIT_COMMITTER_NAME="Hunter Hu"
+declare -x GIT_COMMITTER_EMAIL="hunterhu.ca@gmail.com"
+

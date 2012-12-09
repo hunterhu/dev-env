@@ -1,0 +1,135 @@
+:filetype on
+:syntax on
+:set ruler
+:set tabstop=4
+:set shiftwidth=4
+"this option will disable Makefile
+"which depends on tabs to work
+:set expandtab "to enter a real tab character use Ctrl-V<Tab> key sequence
+:set nu
+:set autoindent
+":set cindent
+:inoremap {<CR>  {<CR>}<ESC>O<Tab>
+:set hlsearch
+:set incsearch
+:set autoread
+:set cursorline
+:set autoread
+:set autowrite
+:set backupdir=./.backup,/tmp
+:set directory=./.backup,/tmp
+:set laststatus=2
+":set so=999 "scrolloff option to keep cursor in the middle
+
+"gvim
+:set go-=m "remove menu bar
+:set go-=T "remove tool bar
+:set go-=r "remove right-hand scroll bar
+
+:map <F5> i/* Hunter Hu */<ESC>o<ESC>!!date<Return>^i/* <ESC>$a */<ESC>o<ESC>o#include <stdio.h><ESC>o#include <stdlib.h><ESC>o#include <string.h><ESC>o<ESC>oint main(int argc, char* argv[])<ESC>o{<Return>return 0;<ESC>Oprintf("i = %i\n", i);<ESC>O
+
+:map <F6> !!date<Return>$a ##<ESC>^i##<ESC>o<ESC>oEXEC := exec<ESC>o<ESC>oobjects := test.o<ESC>oobjects += <ESC>o<ESC>oCFLAGS := -g<ESC>oCFLAGS += -Wall <ESC>oCFLAGS += -std=c99<ESC>oCFLAGS += -I./include<ESC>o<ESC>ovpath %.c src<ESC>o<ESC>o$(EXEC) : $(objects)<ESC>o<ESC><<i	gcc -o $@ $^ $(CFLAGS)<ESC>o<ESC>o<ESC>i.PHONY : clean<ESC>oclean :<ESC>o	rm -f $(EXEC) $(objects)<ESC>13k5h
+
+:map <F3> i/* Hunter Hu */<ESC>o<ESC>!!date<Return>^i/* <ESC>$a */<ESC>o<ESC>o#include <linux/init.h><ESC>o#include <linux/module.h><ESC>oMODULE_LICENSE("Dual BSD/GPL");<ESC>o<ESC>ostatic int hello_init(void)<ESC>o{<Return>printk(KERN_ALERT "Hello World\n");<CR>return 0;<ESC><S-G>o<ESC>ostatic void hello_exit(void)<CR>{<CR>printk(KERN_ALERT "Goodbye\n");<ESC><S-G>o<ESC>omodule_init(hello_init);<CR>module_exit(hello_exit);<ESC>
+
+:map <F4> iifneq ($(KERNELRELEASE),)<CR><TAB>obj-m := hello.o<CR><ESC>oelse<CR><TAB>KERNELDIR ?= /lib/modules/$(shell uname -r)/build<CR>PWD := $(shell pwd)<CR><CR><ESC>idefault:<CR><TAB>$(MAKE) -C $(KERNELDIR) M=$(PWD) modules<CR><CR><ESC>iendif<ESC>
+
+:map <F8> <ESC>:TlistToggle <CR>
+
+:set textwidth=80
+:set tags=~/tags,./tags
+
+:let Tlist_Auto_Open = 0
+:let Tlist_Display_Prototype = 0
+:let Tlist_Exit_OnlyWindow = 1
+:let Tlist_File_Fold_Auto_Close = 1
+:let Tlist_Process_File_Always = 1
+:let Tlist_Use_Right_Window = 0
+:let Tlist_WinWidth = 25
+:let Tlist_Enable_Fold_Column = 0
+:let Tlist_Compact_Format = 1
+
+:so $HOME/.vim/scripts/highlight_cur_word.vim
+
+function ShowSpaces(...)
+	let @/="\\v(\\s+$)|( +\\ze\\t)"
+	let oldhlsearch=&hlsearch
+	if !a:0
+		let &hlsearch=!&hlsearch
+	else
+		let &hlsearch=a:1
+	end
+	return oldhlsearch
+endfunction
+
+function TrimSpaces() range
+	let oldhlsearch=ShowSpaces(1)
+	execute a:firstline.",".a:lastline."substitute ///gec"
+	let &hlsearch=oldhlsearch
+endfunction
+
+command -bar -nargs=? ShowSpaces call ShowSpaces(<args>)
+command -bar -nargs=0 -range=% TrimSpaces <line1>,<line2>call TrimSpaces()
+nnoremap <F12>     :ShowSpaces 1<CR>
+nnoremap <S-F12>   m`:TrimSpaces<CR>``
+vnoremap <S-F12>   :TrimSpaces<CR>
+
+map _F ma[[k"xyy`a:echo @x<CR>
+
+"GarminOS styple comments
+:map \g <ESC>o<ESC>i/*----------------------------------------------------------<ESC>o<ESC>xi-----------------------------------------------------------*/<ESC>lDO
+
+:map \g1 <ESC>o<ESC>i    /*------------------------------------------------------<ESC>o<ESC>xi------------------------------------------------------*/<ESC>lDO
+
+:map \g2 <ESC>o<ESC>i        /*--------------------------------------------------<ESC>o<ESC>xi--------------------------------------------------*/<ESC>lDO
+
+:map \g3 <ESC>o<ESC>i            /*----------------------------------------------<ESC>o<ESC>xi----------------------------------------------*/<ESC>lDO
+
+:map \g4 <ESC>o<ESC>i                /*------------------------------------------<ESC>o<ESC>xi------------------------------------------*/<ESC>lDO
+
+:map \g5 <ESC>o<ESC>i                    /*--------------------------------------<ESC>o<ESC>xi--------------------------------------*/<ESC>lDO
+
+:map \g6 <ESC>o<ESC>i                        /*-----------------------------------ESC>o<ESC>xi----------------------------------*/<ESC>lDO
+
+" C++ //-comment to C /*-comment-*/
+:map \c :%s://\(.*\):/*\1 */:<CR>
+"
+" " C /*-single-line-*/ to C++ //-comment
+":map \C :%s:/\*\(.\{-\}\)\s*\*/://\1:<CR>
+
+"maximize window and return to the previous split structure
+"nnoremap <C-W>O :call MaximizeToggle ()<CR>
+"nnoremap <C-W>o :call MaximizeToggle ()<CR>
+"nnoremap <C-W><C-O> :call MaximizeToggle ()<CR>
+
+function! MaximizeToggle()
+  if exists("s:maximize_session")
+    exec "source " . s:maximize_session
+    call delete(s:maximize_session)
+    unlet s:maximize_session
+    let &hidden=s:maximize_hidden_save
+    unlet s:maximize_hidden_save
+  else
+    let s:maximize_hidden_save = &hidden
+    let s:maximize_session = tempname()
+    set hidden
+    exec "mksession! " . s:maximize_session
+    only
+  endif
+endfunction
+
+"moving split windows easier
+:map <C-J> <C-W>j
+:map <C-K> <C-W>k
+:map <C-H> <C-W>h
+:map <C-L> <C-W>l
+:map <C-O> <C-W>o
+":map <F7> <C-W>w
+":map <F4> <C-W>o
+
+"for GamrinOS coding stype, adding a space
+:map <C-P> a <ESC>
+
+"for open deeper files
+cabbr <expr> %% expand('%:p:h')
+

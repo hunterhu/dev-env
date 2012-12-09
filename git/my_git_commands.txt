@@ -1,0 +1,181 @@
+#git help
+git help
+git help -a
+
+#git config
+    # /etc/gitconfig    used with --system
+    # ~/.gitconfig      used with --global
+    # .git/config       project specific
+  # global settings
+git config --global user.name "Hunter Hu"
+git config --global user.email hunter.hu@garmin.com
+git config --global core.editor vim
+git config --global merge.tool vimdiff
+git config --list
+git config user.email #check individual setting
+  # Git Aliases
+git config --global alias.co checkout
+git config --global alias.br branch
+git config --global alias.ci commit
+git config --global alias.st status
+git config --global alias.unstage 'reset HEAD --'
+git config --global alias.last 'log -1 HEAD'
+git config --global alias.ls 'ls-files'
+
+# git diff
+git diff master..test
+git diff origin/master..master -- build-targets/SYS.cobra.cfg  # diff the same file in two different branches
+git diff 9e457d5..875dfaf evl_log.c
+git diff # see diff changes that are still unstaged (uncached, unindexed)
+git diff --cached # see diff changes that are git added, cached, indexed.
+
+git fetch
+git diff ...origin
+
+# optimizing repo performance
+git gc
+
+# git log
+git log --patch(-p)
+git log -3 -p
+git log -1 --name-only
+git log --abbrev-commit --pretty=oneline
+git log origin/master
+    # see logs on the remote server
+
+# git shortlog
+git shortlog
+
+# git ls-files
+git ls-files
+    # list all cached(controlled) files in the repo
+
+# git stash temporary work
+git stash
+git stash pop(|apply)
+git stash clear
+git stash list
+git stash apply stash@{2}
+    # apply an old stash by specifying its name
+git stash apply --index
+    # make the stashed changes into index
+
+# git add
+git add -p
+git add -i
+
+# git branch
+git branch new-b master
+    # create a new branch
+git branch -d abranch
+git branch -r
+    # see remote branches on server
+git branch -m old-branch new-branch
+    # rename(move) branch
+git branch -v
+    # see last commit on each branch
+git branch --merged
+git branch --no-merged
+    # rename a branch name
+git branch -m old_branch new_branch
+    # which branch contains the tip
+git branch --contains
+
+
+
+# git checkout
+git checkout -b anewbranch
+git checkout master .gitignore
+    # merge a file from another branch
+git checkout --track -b remote-feature-branch origin/remote-feature-branch
+    # track a remote feature branch locally; this command will
+    # create a local branch and track the remote one
+    # if git fatal error on this one, you need to git pull first because
+    # local git doesn't know about the remote branch yet
+
+# git format-patch
+git format-patch -o patches -n d26d249d..09284197
+    # note that the first commit d26d249d is not
+    # included in the patch
+
+# git apply
+    # not suitable importable commits, see "git am"
+git apply EVL_pub_declare_EVL_cmd_execute.patch
+    # without any option: changes to files that are
+    # not required git controlled files
+git apply --index EVL_pub_declare_EVL_cmd_execute.patch
+    # --index: changes git added already but not committed
+git apply --cache d EVL_pub_declare_EVL_cmd_execute.patch
+    # --cache: changes not even git added
+
+# git am
+git am EVL_cmd_work.patch/0002-EVL_log-implements-EVL-delete-functions.patch
+    # git am apply the patch as a commit
+
+# git reset
+git reset --hard
+
+# gitk
+gitk
+gitk --all
+
+# git commit
+git commit -a # skipping git add, but I don't like it
+
+# git rm
+git rm # will remove the file from the disk
+git rm --cached # will keep the file on the disk, but no more tracking it
+
+# git remote
+git remote
+git remote -v
+git remote show origin
+
+# git citool
+git citool # start git gui
+
+# git rebase
+git rebase master # normal rebase with master
+git rebase -i HEAD~3
+    # modify a commit that is farther back into history
+    # this is useful when push multiple commits for review and have to 
+    # revise them and push review again
+    # Also: can squash a commit, i.e. meld 2 commits into 1
+# git blame
+git blame -L 12,22 buggyfile.c
+    # this will list when and who touched line12-22 in buggyfile.c
+
+# recover data
+git reflog
+git log -g
+git branch recover-branch 453901f7
+    # assume 453901f7 is the SHA1 of the commit to be recovered
+
+# git clean: remove untracked files
+git clean
+git clean -ffdx submodules/
+
+# git push 
+git push
+git push origin feature_x
+    # when using gerrit and feature branch
+git push origin HEAD:refs/for/features/ctp-hardware
+
+# git reflog
+git reflog
+git log HEAD@{HEAD4}
+    # this will reveal what changes has been made to head
+    # and by git log I can see the git logs of that change
+
+# git bisect
+git bisect start
+git bisect bad
+git bisect good 83e75658
+git bisect reset
+    # see --help for detailed information
+
+
+
+
+
+
