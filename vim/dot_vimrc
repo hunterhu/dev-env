@@ -9,6 +9,7 @@
 :set nu
 :set autoindent
 ":set cindent
+":set smartindent
 :inoremap {<CR>  {<CR>}<ESC>O<Tab>
 :set hlsearch
 :set incsearch
@@ -45,7 +46,7 @@
 :let Tlist_File_Fold_Auto_Close = 1
 :let Tlist_Process_File_Always = 1
 :let Tlist_Use_Right_Window = 0
-:let Tlist_WinWidth = 25
+:let Tlist_WinWidth = 35
 :let Tlist_Enable_Fold_Column = 0
 :let Tlist_Compact_Format = 1
 
@@ -89,7 +90,7 @@ map _F ma[[k"xyy`a:echo @x<CR>
 
 :map \g5 <ESC>o<ESC>i                    /*--------------------------------------<ESC>o<ESC>xi--------------------------------------*/<ESC>lDO
 
-:map \g6 <ESC>o<ESC>i                        /*-----------------------------------ESC>o<ESC>xi----------------------------------*/<ESC>lDO
+:map \g6 <ESC>o<ESC>i                        /*-----------------------------------<ESC>o<ESC>xi-----------------------------------*/<ESC>lDO
 
 " C++ //-comment to C /*-comment-*/
 :map \c :%s://\(.*\):/*\1 */:<CR>
