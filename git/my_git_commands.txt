@@ -21,6 +21,8 @@ git config --global alias.st status
 git config --global alias.unstage 'reset HEAD --'
 git config --global alias.last 'log -1 HEAD'
 git config --global alias.ls 'ls-files'
+  # setup proxy
+git config --global http.proxy http://mombasa.garmin.com:9119
 
 # git diff
 git diff master..test

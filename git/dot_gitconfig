@@ -11,3 +11,5 @@
 	unstage = reset HEAD --
 	last = log -1 HEAD
 	ls = ls-files
+[http]
+	proxy = http://mombasa.garmin.com:9119
