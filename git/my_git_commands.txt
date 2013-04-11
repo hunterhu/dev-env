@@ -8,7 +8,7 @@ git help -a
     # .git/config       project specific
   # global settings
 git config --global user.name "Hunter Hu"
-git config --global user.email hunter.hu@garmin.com
+git config --global user.email hunterhu.ca@gmail.com
 git config --global core.editor vim
 git config --global merge.tool vimdiff
 git config --list
@@ -22,11 +22,11 @@ git config --global alias.unstage 'reset HEAD --'
 git config --global alias.last 'log -1 HEAD'
 git config --global alias.ls 'ls-files'
   # setup proxy
-git config --global http.proxy http://mombasa.garmin.com:9119
+git config --global http.proxy http://name.domain.com:1234
 
 # git diff
 git diff master..test
-git diff origin/master..master -- build-targets/SYS.cobra.cfg  # diff the same file in two different branches
+git diff origin/master..master -- filename # diff the same file in two different branches
 git diff 9e457d5..875dfaf evl_log.c
 git diff # see diff changes that are still unstaged (uncached, unindexed)
 git diff --cached # see diff changes that are git added, cached, indexed.
@@ -102,7 +102,7 @@ git format-patch -o patches -n d26d249d..09284197
 
 # git apply
     # not suitable importable commits, see "git am"
-git apply EVL_pub_declare_EVL_cmd_execute.patch
+git apply some.patch
     # without any option: changes to files that are
     # not required git controlled files
 git apply --index EVL_pub_declare_EVL_cmd_execute.patch
