@@ -23,7 +23,14 @@ alias ll='ls -lsht --color'
 alias ls='ls --color'
 alias du='du -sh'
 #alias gitk="gitk --all &"
-alias ack="ack-grep"
+
+uname -a | grep "[U|u]buntu"
+if [ "$?" -eq "0" ]
+then
+    alias ack="ack-grep -i -a"
+else
+    alias ack="ack -i -a"
+fi
 
 #
 # ENV for ack
@@ -53,7 +60,7 @@ PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
 if [ "$PS1" ]; then
     # Disable the CapsLock Key
     xmodmap -e "remove lock = Caps_Lock"
-fi 
+fi
     # or remove it physically from the board
 
 #

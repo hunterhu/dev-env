@@ -460,13 +460,13 @@ endif
 " To change the main key mapping, add this to your .vimrc file:
 "   map <key> <PLug>ShowFunc
 
-if ( !hasmapto('<PLUG>ShowFunc') && (maparg('<F1>') == '') )
-	map  <F1> <Plug>ShowFunc
-  map! <F1> <Plug>ShowFunc
+if ( !hasmapto('<PLUG>ShowFunc') && (maparg('<F2>') == '') )
+	map  <F2> <Plug>ShowFunc
+  map! <F2> <Plug>ShowFunc
 elseif !hasmapto('<PLUG>ShowFunc')
   if ( !has("gui_running") || has("win32") )
     echo "ShowFunc Error: No Key mapped.\n".
-      \  "<F1> is taken and a replacement was not assigned."
+      \  "<F2> is taken and a replacement was not assigned."
   endif
   let g:loaded_showfunc = 0
   finish
