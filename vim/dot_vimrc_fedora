@@ -27,6 +27,8 @@
 :set go-=T "remove tool bar
 :set go-=r "remove right-hand scroll bar
 
+:map <F1> <ESC>
+:imap <F1> <ESC>
 :map <F5> i/* Hunter Hu */<ESC>o<ESC>!!date<Return>^i/* <ESC>$a */<ESC>o<ESC>o#include <stdio.h><ESC>o#include <stdlib.h><ESC>o#include <string.h><ESC>o<ESC>oint main(int argc, char* argv[])<ESC>o{<Return>return 0;<ESC>Oprintf("i = %i\n", i);<ESC>O
 
 :map <F6> !!date<Return>$a ##<ESC>^i##<ESC>o<ESC>oEXEC := exec<ESC>o<ESC>oobjects := test.o<ESC>oobjects += <ESC>o<ESC>oCFLAGS := -g<ESC>oCFLAGS += -Wall <ESC>oCFLAGS += -std=c99<ESC>oCFLAGS += -I./include<ESC>o<ESC>ovpath %.c src<ESC>o<ESC>o$(EXEC) : $(objects)<ESC>o<ESC><<i	gcc -o $@ $^ $(CFLAGS)<ESC>o<ESC>o<ESC>i.PHONY : clean<ESC>oclean :<ESC>o	rm -f $(EXEC) $(objects)<ESC>13k5h
