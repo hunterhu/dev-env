@@ -27,9 +27,9 @@ alias du='du -sh'
 uname -a | grep "[U|u]buntu"
 if [ "$?" -eq "0" ]
 then
-    alias ack="ack-grep -i -a"
+    alias ack="ack-grep -i"
 else
-    alias ack="ack -i -a"
+    alias ack="ack -i"
 fi
 
 #
