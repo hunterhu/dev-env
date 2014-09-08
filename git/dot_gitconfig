@@ -11,5 +11,3 @@
 	unstage = reset HEAD --
 	last = log -1 HEAD
 	ls = ls-files
-[http]
-	proxy = http://name.domain.com:1234
