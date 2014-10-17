@@ -14,9 +14,16 @@ if [ $? -ne 0 ]; then
     sudo echo "nameserver 8.8.8.8" >> /etc/resolv.conf
 fi
 
+echo "============================"
+echo "Adjust sudo timeout ..."
+echo "============================"
+pause
+sudo sed -i 's/Defaults.*env_reset.*/Defaults    env_reset,timestamp_timeout=-1/' /etc/sudoers
+
 echo "================================"
 echo "sudo apt-get update/upgrade..."
 echo "================================"
+pause
 sudo apt-get update
 sudo apt-get upgrade
 
