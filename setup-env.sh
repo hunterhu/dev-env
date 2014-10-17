@@ -15,11 +15,31 @@ if [ $? -ne 0 ]; then
 fi
 
 echo "================================"
+echo "sudo apt-get update/upgrade..."
+echo "================================"
+sudo apt-get update
+sudo apt-get upgrade
+
+echo "================================"
 echo "Installing essential packages..."
 echo "================================"
 pause
 PACKAGES=( cscope ctags git gitk openssh tree meld vim chromium-browser )
 for i in "${PACKAGES[@]}"
+do
+     echo "======================"
+     echo "Installing $i ..."
+     echo "======================"
+     pause
+     sudo apt-get install $i -y
+done
+
+echo "================================"
+echo "Installing sunxi dev packages..."
+echo "================================"
+pause
+DEV_PACKAGES=( ld-essential u-boot-tools gcc-arm-linux-gnueabihf libusb-1.0-0-dev wget fakeroot kernel-package zlib1g-dev libncurses5-devr )
+for i in "${DEV_PACKAGES[@]}"
 do
      echo "======================"
      echo "Installing $i ..."
@@ -62,3 +82,5 @@ echo "Installing .vim..."
 echo "=================="
 pause
 cp -R vim/dot_vim_ubuntu ~/.vim
+
+echo "DONE"
