@@ -22,6 +22,7 @@ alias ppd='popd'
 alias ll='ls -lsht --color'
 alias ls='ls --color'
 alias du='du -sh'
+alias df='df -h'
 #alias gitk="gitk --all &"
 
 uname -a | grep "[U|u]buntu"
