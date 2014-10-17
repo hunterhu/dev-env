@@ -18,7 +18,7 @@ echo "================================"
 echo "Installing essential packages..."
 echo "================================"
 pause
-PACKAGES=( cscope ctags git gitk openssh tree )
+PACKAGES=( cscope ctags git gitk openssh tree meld vim chromium-browser )
 for i in "${PACKAGES[@]}"
 do
      echo "======================"
@@ -27,6 +27,12 @@ do
      pause
      sudo apt-get install $i -y
 done
+
+echo "================================"
+echo "Setting vim as system editor ..."
+echo "================================"
+pause
+sudo update-alternatives --config editor
 
 echo "============================="
 echo "Setting up development env..."
