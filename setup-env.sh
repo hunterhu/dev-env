@@ -31,7 +31,7 @@ echo "================================"
 echo "Installing essential packages..."
 echo "================================"
 pause
-PACKAGES=( cscope ctags git gitk openssh tree meld vim chromium-browser )
+PACKAGES=( cscope ctags git gitk openssh tree meld vim chromium-browser ntp )
 for i in "${PACKAGES[@]}"
 do
      echo "======================"
@@ -48,9 +48,9 @@ pause
 DEV_PACKAGES=( ld-essential u-boot-tools gcc-arm-linux-gnueabihf libusb-1.0-0-dev wget fakeroot kernel-package zlib1g-dev libncurses5-devr )
 for i in "${DEV_PACKAGES[@]}"
 do
-     echo "======================"
+     echo "=============================="
      echo "Installing $i ..."
-     echo "======================"
+     echo "=============================="
      pause
      sudo apt-get install $i -y
 done
