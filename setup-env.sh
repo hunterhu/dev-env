@@ -46,7 +46,7 @@ echo "================================"
 echo "Installing sunxi dev packages..."
 echo "================================"
 pause
-DEV_PACKAGES=( ld-essential u-boot-tools gcc-arm-linux-gnueabihf libusb-1.0-0-dev wget fakeroot kernel-package zlib1g-dev libncurses5-devr )
+DEV_PACKAGES=( ld-essential u-boot-tools gcc-arm-linux-gnueabihf libusb-1.0-0-dev wget fakeroot kernel-package zlib1g-dev libncurses5-dev )
 for i in "${DEV_PACKAGES[@]}"
 do
      echo "=============================="
