@@ -15,6 +15,7 @@ fi
 alias rm='rm -i'
 alias cd..='cd ..'
 alias cl='clear'
+alias claer='clear'
 alias his='history'
 alias dirs='dirs -v'
 alias psd='pushd'
