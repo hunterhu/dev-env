@@ -26,14 +26,7 @@ alias du='du -sh'
 alias df='df -h'
 alias free='free -h'
 #alias gitk="gitk --all &"
-
-uname -a | grep "[U|u]buntu"
-if [ "$?" -eq "0" ]
-then
-    alias ack="ack-grep -i"
-else
-    alias ack="ack -i"
-fi
+alias ack="ack-grep -i"
 
 #
 # ENV for ack
