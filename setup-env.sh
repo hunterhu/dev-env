@@ -32,7 +32,7 @@ echo "Installing essential packages..."
 echo "================================"
 pause
 PACKAGES=( cscope ctags git gitk openssh openssh-server tree meld vim chromium-browser ntp
-ack-grep htop qemu-user-static minicom sshpass gpicview mousepad vim-gtk linux-tools-common )
+ack-grep htop qemu-user-static minicom sshpass gpicview mousepad vim-gtk linux-tools-common libc6-dev-i386 )
 for i in "${PACKAGES[@]}"
 do
      echo "======================"
@@ -43,7 +43,7 @@ do
 done
 
 echo "================================"
-echo "Installing sunxi dev packages..."
+echo "Installing arm dev packages..."
 echo "================================"
 pause
 DEV_PACKAGES=( ld-essential u-boot-tools gcc-arm-linux-gnueabihf libusb-1.0-0-dev wget fakeroot kernel-package zlib1g-dev libncurses5-dev )
