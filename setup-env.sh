@@ -32,7 +32,7 @@ echo "Installing essential packages..."
 echo "================================"
 pause
 PACKAGES=( cscope ctags git gitk openssh openssh-server tree meld vim chromium-browser ntp
-ack-grep htop qemu-user-static minicom sshpass gpicview mousepad vim-gtk linux-tools-common libc6-dev-i386 )
+ack-grep htop qemu-user-static minicom sshpass gpicview mousepad vim-gtk linux-tools-common inotify-tools libc6-dev-i386 )
 for i in "${PACKAGES[@]}"
 do
      echo "======================"
