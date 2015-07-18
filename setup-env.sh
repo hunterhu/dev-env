@@ -91,4 +91,6 @@ echo "=================="
 pause
 cp -R vim/dot_vim_ubuntu ~/.vim
 
+sudo apt-get autoremove
+
 echo "DONE"
