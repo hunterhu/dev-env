@@ -45,7 +45,7 @@ echo "================================"
 echo "Installing essential packages..."
 echo "================================"
 pause
-PACKAGES=( cscope ctags git gitk openssh openssh-server tree meld vim ntp
+PACKAGES=( cscope ctags git gitk openssh openssh-server tree meld vim ntp ruby-dev ruby rubygems build-essential
 ack-grep htop qemu-user-static minicom sshpass gpicview mousepad vim-gtk linux-tools-common inotify-tools libc6-dev-i386 )
 for i in "${PACKAGES[@]}"
 do
@@ -55,6 +55,12 @@ do
      pause
      sudo apt-get install $i -y
 done
+
+echo "================================"
+echo "Installing fpm"
+echo "================================"
+pause
+sudo gem install fpm
 
 echo "================================"
 echo "Installing arm dev packages..."
