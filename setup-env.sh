@@ -20,6 +20,20 @@ echo "============================"
 pause
 sudo sed -i 's/Defaults.*env_reset.*/Defaults    env_reset,timestamp_timeout=-1/' /etc/sudoers
 
+echo "============================"
+echo "Remove Ubuntu Error Report ..."
+echo "============================"
+pause
+sudo apt-get purge apport
+
+echo "============================"
+echo "Purge libreoffice ..."
+echo "============================"
+pause
+sudo apt-get remove --purge libreoffice*
+sudo apt-get clean
+sudo apt-get autoremove
+
 echo "================================"
 echo "sudo apt-get update/upgrade..."
 echo "================================"
