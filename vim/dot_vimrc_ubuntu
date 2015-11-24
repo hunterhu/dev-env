@@ -21,6 +21,9 @@
 :set directory=./.backup,/tmp
 :set laststatus=2
 ":set so=999 "scrolloff option to keep cursor in the middle
+"show tab characters, useful for Makefile coding
+:set list
+:set listchars=tab:\|\ 
 
 "gvim
 :set go-=m "remove menu bar
