@@ -11,3 +11,5 @@
 	unstage = reset HEAD --
 	last = log -1 HEAD
 	ls = ls-files
+[gc]
+	auto = 0
