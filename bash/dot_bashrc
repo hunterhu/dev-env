@@ -79,7 +79,7 @@ alias du='du -sh'
 alias df='df -h'
 alias free='free -h'
 #alias gitk="gitk --all &"
-alias ack="ack-grep -i"
+alias ack="ack-grep -i --color"
 alias less="less -R"
 
 #
