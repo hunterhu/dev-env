@@ -80,6 +80,7 @@ alias df='df -h'
 alias free='free -m'
 #alias gitk="gitk --all &"
 alias ack="ack-grep -i"
+alias less="less -R"
 
 #
 # ENV for ack
