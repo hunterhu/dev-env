@@ -78,6 +78,7 @@ alias ls='ls --color'
 alias du='du -sh'
 alias df='df -h'
 alias free='free -h'
+alias tree='tree -C'
 #alias gitk="gitk --all &"
 alias ack="ack-grep -i --color"
 alias less="less -R"
