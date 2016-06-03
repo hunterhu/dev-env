@@ -45,7 +45,7 @@ echo "================================"
 echo "Installing essential packages..."
 echo "================================"
 pause
-PACKAGES=( bless cscope ctags git gitk openssh openssh-server tree meld vim ntp build-essential
+PACKAGES=( vbindiff bless cscope ctags git gitk openssh openssh-server tree meld vim ntp build-essential
 ack-grep htop qemu-user-static minicom gpicview mousepad vim-gtk linux-tools-common inotify-tools libc6-dev-i386 )
 for i in "${PACKAGES[@]}"
 do
