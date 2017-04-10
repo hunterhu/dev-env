@@ -27,10 +27,17 @@ pause
 sudo apt-get purge apport
 
 echo "============================"
-echo "Purge libreoffice ..."
+echo "Purge packages ..."
 echo "============================"
-pause
-sudo apt-get remove --purge libreoffice*
+PURGES=( libreoffice* thunderbird firefox )
+for p in "${PURGES[@]}"
+do
+     echo "======================"
+     echo "Purging $p ..."
+     echo "======================"
+     pause
+     sudo apt-get remove --purge $p
+done
 sudo apt-get clean
 sudo apt-get autoremove
 
@@ -46,7 +53,7 @@ echo "Installing essential packages..."
 echo "================================"
 pause
 PACKAGES=( nmap vbindiff bless cscope ctags git gitk openssh openssh-server tree meld vim ntp build-essential
-ack-grep htop qemu-user-static minicom gpicview mousepad vim-gtk linux-tools-common inotify-tools libc6-dev-i386 )
+ack-grep htop qemu-user-static minicom vim-gtk linux-tools-common inotify-tools libc6-dev-i386 )
 for i in "${PACKAGES[@]}"
 do
      echo "======================"
