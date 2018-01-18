@@ -1,0 +1,2 @@
+Step 1: use the script to get the cscope.files
+Step 2: "cscope -b -q -k" to generate cscope data base for kernel symbols
