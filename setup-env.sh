@@ -29,7 +29,7 @@ sudo apt-get purge apport
 echo "============================"
 echo "Purge packages ..."
 echo "============================"
-PURGES=( libreoffice* thunderbird firefox )
+PURGES=( libreoffice* thunderbird )
 for p in "${PURGES[@]}"
 do
      echo "======================"
