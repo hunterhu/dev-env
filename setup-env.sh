@@ -64,6 +64,20 @@ do
 done
 
 echo "================================"
+echo "Installing Yocto required packages..."
+echo "================================"
+pause
+PACKAGES=( chrpath gawk texinfo )
+for i in "${PACKAGES[@]}"
+do
+     echo "======================"
+     echo "Installing $i ..."
+     echo "======================"
+     pause
+     sudo apt-get install $i -y
+done
+
+echo "================================"
 echo "Installing arm dev packages..."
 echo "================================"
 pause
