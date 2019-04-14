@@ -67,7 +67,7 @@ echo "================================"
 echo "Installing Yocto required packages..."
 echo "================================"
 pause
-PACKAGES=( chrpath gawk texinfo bmap-tool )
+PACKAGES=( chrpath gawk texinfo bmap-tools )
 for i in "${PACKAGES[@]}"
 do
      echo "======================"
