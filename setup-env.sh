@@ -81,7 +81,7 @@ echo "================================"
 echo "Installing arm dev packages..."
 echo "================================"
 pause
-DEV_PACKAGES=( ld-essential u-boot-tools gcc-arm-linux-gnueabihf libusb-1.0-0-dev wget fakeroot kernel-package zlib1g-dev libncurses5-dev zlib1g:i386 lib32z1 lzop )
+DEV_PACKAGES=( liblzma-dev ld-essential u-boot-tools gcc-arm-linux-gnueabihf libusb-1.0-0-dev wget fakeroot kernel-package zlib1g-dev libncurses5-dev zlib1g:i386 lib32z1 lzop )
 for i in "${DEV_PACKAGES[@]}"
 do
      echo "=============================="
