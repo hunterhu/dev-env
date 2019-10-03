@@ -126,6 +126,9 @@ echo "=================="
 pause
 cp -R vim/dot_vim_ubuntu ~/.vim
 
+mkdir ~/bin
+cp drop_fs_caches.sh ~/bin/
+
 sudo apt-get autoremove
 
 echo "DONE"
