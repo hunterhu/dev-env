@@ -124,6 +124,7 @@ echo "=================="
 echo "Installing .vim..."
 echo "=================="
 pause
+tar zxf vim/dot_vim_ubuntu.tar.gz -C vim/
 cp -R vim/dot_vim_ubuntu ~/.vim
 
 mkdir ~/bin
