@@ -82,6 +82,7 @@ alias tree='tree -C'
 #alias gitk="gitk --all &"
 alias ack="ack -i --color"
 alias less="less -R"
+alias ip="ip -c -4 a"
 
 #
 # ENV for ack
