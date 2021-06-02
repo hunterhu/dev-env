@@ -53,7 +53,7 @@ echo "Installing essential packages..."
 echo "================================"
 pause
 PACKAGES=( python3-dev cmake curl compizconfig-settings-manager nfs-common nmap vbindiff bless cscope ctags git gitk openssh openssh-server tree meld vim ntp build-essential
-ack-grep htop qemu-user-static minicom vim-gtk linux-tools-common inotify-tools libc6-dev-i386 )
+ack-grep htop qemu-user-static minicom vim-gtk linux-tools-common inotify-tools libc6-dev-i386 libxcb-xinerama0 )
 for i in "${PACKAGES[@]}"
 do
      echo "======================"
