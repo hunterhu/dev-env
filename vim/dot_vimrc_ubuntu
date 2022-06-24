@@ -133,22 +133,3 @@ endfunction
 :map <C-O> <C-W>o
 ":map <F7> <C-W>w
 ":map <F4> <C-W>o
-
-"for GamrinOS coding stype, adding a space
-:map <C-P> a <ESC>
-
-"for open deeper files
-cabbr <expr> %% expand('%:p:h')
-
-execute pathogen#infect()
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-let g:syntastic_swift_checkers = ['swiftpm', 'swiftlint']
