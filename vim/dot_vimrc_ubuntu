@@ -133,3 +133,6 @@ endfunction
 :map <C-O> <C-W>o
 ":map <F7> <C-W>w
 ":map <F4> <C-W>o
+
+:highlight ExtraWhitespace ctermbg=red guibg=red
+:match ExtraWhitespace /\s\+$/
