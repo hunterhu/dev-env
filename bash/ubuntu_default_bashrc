@@ -102,4 +102,4 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-PS1='\[\e[32m\]\u\[\e[33m\]@\H:\[\e[34m\]\W\[\e[0m\]\$ '
+PS1='\[\033[1m\]\[\e[32m\]\u\[\e[0m\]\[\033[0m\]@\[\033[1m\]\[\e[33m\]\h\[\e[0m\]\[\033[0m\]:\[\033[1m\]\[\e[34m\]\w\[\e[0m\]\[\033[0m\]\$ '
