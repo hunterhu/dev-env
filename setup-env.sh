@@ -126,6 +126,12 @@ pause
 tar jxf vim/dot_vim_ubuntu.tar.bz2 -C vim/
 cp -R vim/dot_vim_ubuntu ~/.vim
 
+echo "=================="
+echo "Installing .tmux.conf..."
+echo "=================="
+pause
+cp tmux/dot_tmux.conf ~/.tmux.conf
+
 mkdir ~/bin
 cp drop_fs_caches.sh ~/bin/
 
