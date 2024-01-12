@@ -1,0 +1,11 @@
+
+Alt(Opt) left/right/up/down
+    (left split/right split/max/restore)
+Alt 1/2/3/4
+    switch to workspace 1/2/3/4
+Ctrl+Alt 1/2/3/4
+    move current app to workspace 1/2/3/4
+Alt O
+    show overview
+Alt L
+    show all apps and workspace
