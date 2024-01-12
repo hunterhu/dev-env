@@ -1,0 +1,5 @@
+#backup
+gsettings list-recursively org.gnome.desktop.wm.keybindings > shortcuts_backup.txt
+
+#restore
+didn't find a way to restore easily using gsettings, working on it...
