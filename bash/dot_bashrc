@@ -129,3 +129,4 @@ export TERM=xterm-256color
 PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[0;33m\]$(__git_ps1 " (%s)")\n\[\033[01;34m\]\$ \[\033[00m\]'
 
 export GIT_PS1_SHOWDIRTYSTATE=1
+export GIT_PS1_SHOWSTASHSTATE=1
