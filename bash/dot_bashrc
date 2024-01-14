@@ -81,7 +81,8 @@ alias df='df -h'
 alias free='free -h'
 alias tree='tree -C'
 #alias gitk="gitk --all &"
-alias ack="ack -i --color"
+alias ack="ack --color"
+alias acki="ack -i --color"
 alias less="less -R"
 alias ip="ip -c -4 a"
 
