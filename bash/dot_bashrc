@@ -95,7 +95,7 @@ export ACK_COLOR_MATCH="bold blue"
 #
 # PATH setup
 #
-PATH=$PATH:$HOME/bin:/sbin:$HOME/.local/bin
+PATH=$PATH:$HOME/bin:/sbin:$HOME/.local/bin:/usr/local/bin
 
 #
 #for cscope
