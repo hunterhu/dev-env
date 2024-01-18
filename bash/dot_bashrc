@@ -65,6 +65,7 @@ fi
 #
 # User specific aliases and functions
 #
+alias grep='grep --color=auto'
 alias rm='rm -i'
 alias cd..='cd ..'
 alias cl='clear'
