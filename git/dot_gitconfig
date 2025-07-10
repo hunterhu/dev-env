@@ -9,7 +9,8 @@
 	ci = commit
 	st = status --untracked-files=no
 	unstage = reset HEAD --
-	last = log -1 HEAD
+	last = log -1 HEAD --name-status
 	ls = ls-files
+    cdiff = diff --cached
 [gc]
 	auto = 0
