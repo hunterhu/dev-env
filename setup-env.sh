@@ -18,7 +18,7 @@ echo "============================"
 echo "Adjust sudo timeout ..."
 echo "============================"
 pause
-sudo sed -i 's/Defaults.*env_reset.*/Defaults    env_reset,timestamp_timeout=-1/' /etc/sudoers
+sudo sed -i 's/Defaults.*env_reset.*/Defaults    env_reset,timestamp_timeout=240/' /etc/sudoers
 
 echo "============================"
 echo "Remove Ubuntu Error Report ..."
