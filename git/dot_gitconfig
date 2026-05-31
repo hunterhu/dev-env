@@ -7,7 +7,7 @@
 	co = checkout
 	br = branch
 	ci = commit
-	st = status --untracked-files=no
+	st = status
 	unstage = reset HEAD --
 	last = log -1 HEAD --name-status
 	ls = ls-files
